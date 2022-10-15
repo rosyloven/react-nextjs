@@ -14,12 +14,13 @@ export const withPokemons = (Component) => {
     const dispatch = useDispatch();
     const pokemonData = useSelector((state) => state.pokemons.pokemonData);
     const loading = useSelector((state) => state.pokemons.loading);
-    const func1 = () => dispatch(setLoadingAction(false));
+    const cancelLoading = () => dispatch(setLoadingAction(false));
+    const activePokemon = useSelector((state) => state.pokemons.activePokemon);
 
     useEffect(() => {
       dispatch(setLoadingAction(true));
       axios.get(src).then((data) => {
-        setTimeout(func1, 1000);
+        setTimeout(cancelLoading, 1000);
         data.data.results.forEach((pokemon) => {
           axios.get(pokemon.url).then((data) => {
             dispatch(setPokemonDataAction(data.data));
@@ -28,6 +29,13 @@ export const withPokemons = (Component) => {
       });
     }, []);
     if (loading) return <StyledLoading />;
-    return <Component pokemonData={pokemonData} loading={loading} {...props} />;
+    return (
+      <Component
+        pokemonData={pokemonData}
+        loading={loading}
+        activePokemon={activePokemon}
+        {...props}
+      />
+    );
   };
 };

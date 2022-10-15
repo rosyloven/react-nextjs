@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   pokemonData: [],
+  activePokemon: "",
   loading: false,
 };
 
@@ -15,8 +16,15 @@ export const pokemonsSlice = createSlice({
     setPokemonDataAction: (state, action) => {
       state.pokemonData.push(action.payload);
     },
+    setActivePokemonAction: (state, action) => {
+      state.activePokemon = action.payload;
+    },
   },
 });
 
-export const { setPokemonDataAction, setLoadingAction } = pokemonsSlice.actions;
+export const {
+  setPokemonDataAction,
+  setLoadingAction,
+  setActivePokemonAction,
+} = pokemonsSlice.actions;
 export default pokemonsSlice.reducer;

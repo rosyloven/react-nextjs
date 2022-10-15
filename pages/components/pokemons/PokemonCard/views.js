@@ -1,38 +1,61 @@
 import styled from "styled-components";
 
 export const StyledPokemonsWrapper = styled.div`
-  display: flex;
-  flex-flow: column;
-  background-color: white;
+  font-family: "Comic Sans MS";
+  display: inline-flex;
+  flex-flow: row;
+  background-color: #fceec8;
+`;
+
+export const StyledPokemonsElement = styled.div`
+  width: 60%;
 `;
 
 export const StyledLink = styled.a`
   cursor: pointer;
+  height: 20px;
+  display: block;
+  background-color: #fceec8;
+  font-family: "Comic Sans MS";
+  padding-left: 15px;
 `;
 
 export const StyledPokemonCardWrapper = styled.div`
-  font-family: "Comic Sans MS";
   display: inline-flex;
   width: 200px;
   height: 220px;
   margin: 10px 5px 5px 10px;
   flex-flow: column;
   border-radius: 13px;
-  background-color: darkslategray;
+  background-color: ${(props) =>
+    (props.type === "fire" && "#ce6262") ||
+    (props.type === "grass" && "mediumseagreen") ||
+    (props.type === "water" && "cornflowerblue") ||
+    (props.type === "bug" && "#f1c860") ||
+    (props.type === "normal" && "cadetblue")};
   color: #f3f3f3;
   box-shadow: 1px 1px 2px black;
+  cursor: pointer;
+  &:active {
+    opacity: 80%;
+  }
 `;
 
 export const StyledPokemonImg = styled.img`
   border-radius: 13px 13px 0 0;
-  height: 85%;
+  height: 185px;
 `;
-export const StyledPokemonName = styled.h1`
+export const StyledPokemonName = styled.p`
   border: none;
   font-size: 11px;
   text-align: center;
   margin: 15px auto;
   height: 5px;
+`;
+
+export const StyledRequest = styled.div`
+  padding-top: 7px;
+  font-size: 28px;
 `;
 
 export const StyledLoading = styled.div`
