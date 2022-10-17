@@ -13,15 +13,21 @@ const Pokemons = ({ pokemonData, activePokemon, loading }) => (
   <>
     <StyledPokemonsWrapper>
       <StyledPokemonsElement>
-        {pokemonData.map((el, index) => (
-          <PokemonCard
-            key={index}
-            name={el.name.toUpperCase()}
-            id={el.id}
-            icon={el.sprites.other.dream_world.front_default}
-            type={el.types[0].type.name}
-          />
-        ))}
+        {pokemonData.map((el, index) => {
+          const icon = el.sprites.other.dream_world.front_default;
+          const name = el.name.toUpperCase();
+          const type = el.types[0].type.name;
+
+          return (
+            <PokemonCard
+              key={index}
+              name={name}
+              id={el.id}
+              icon={icon}
+              type={type}
+            />
+          );
+        })}
       </StyledPokemonsElement>
       {activePokemon ? (
         <PokemonInfo pokemonData={pokemonData} activePokemon={activePokemon} />

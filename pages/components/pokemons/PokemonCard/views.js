@@ -31,11 +31,17 @@ export const StyledPokemonCardWrapper = styled.div`
     (props.type === "fire" && "#ce6262") ||
     (props.type === "grass" && "mediumseagreen") ||
     (props.type === "water" && "cornflowerblue") ||
-    (props.type === "bug" && "#f1c860") ||
+    (props.type === "bug" && "#c8d345") ||
+    (props.type === "poison" && "#725094") ||
+    (props.type === "electric" && "#ffd260") ||
+    (props.type === "fairy" && "#f9b4ff") ||
+    (props.type === "ground" && "#b06800") ||
+    (props.type === "fighting" && "#7a7a7a") ||
     (props.type === "normal" && "cadetblue")};
   color: #f3f3f3;
   box-shadow: 1px 1px 2px black;
   cursor: pointer;
+
   &:active {
     opacity: 80%;
   }

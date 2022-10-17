@@ -15,8 +15,9 @@ export const StyledPokemonInfoPannel = styled.div`
 export const StyledPokemonInfoId = styled.h2`
   margin-top: 80px;
   height: 8%;
-  width: 15%;
+  width: 13%;
   font-size: 30px;
+  align-items: center;
 `;
 
 export const StyledPokemonInfoImg = styled.img`

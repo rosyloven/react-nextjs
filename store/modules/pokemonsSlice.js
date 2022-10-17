@@ -14,8 +14,8 @@ export const pokemonsSlice = createSlice({
       state.loading = action.payload;
     },
     setPokemonDataAction: (state, action) => {
-      state.pokemonData.push(action.payload);
-      state.pokemonData = state.pokemonData.sort((a, b) => a.id - b.id)
+      state.pokemonData = action.payload;
+      state.pokemonData = state.pokemonData.sort((a, b) => a.id - b.id);
     },
     setActivePokemonAction: (state, action) => {
       state.activePokemon = action.payload;
